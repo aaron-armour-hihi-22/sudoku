@@ -1,4 +1,5 @@
 import React from 'react'
+import SudokuGrid from './SudokuGrid'
 
 function App() {
   return (
@@ -6,7 +7,10 @@ function App() {
       <header className="header">
         <h1>Sudoku</h1>
       </header>
-      <section className="main">{/* add your code here */}</section>
+      <section className="main">
+        <SudokuGrid />
+        {/* <p>Hello!</p> */}
+      </section>
     </>
   )
 }
