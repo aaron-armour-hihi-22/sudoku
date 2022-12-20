@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-// import stuff from './stuff'
+import selectedCellIndex from './selectedCellIndex'
 
 export default combineReducers({
-  // stuff
+  selectedCellIndex,
 })
