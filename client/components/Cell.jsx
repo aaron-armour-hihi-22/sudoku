@@ -9,16 +9,11 @@ function Cell({ cellIndex }) {
   const selectedCellIndex = useSelector(
     (reduxStore) => reduxStore.selectedCellIndex
   )
-  // let selected = false
+  const cell = useSelector((reduxStore) => reduxStore.cells[cellIndex])
 
   function clickHandler() {
-    console.log(`Cell ${cellIndex} was clicked`)
     dispatch(setSelectedCell(cellIndex))
   }
-
-  // if (cellIndex === 32) {
-  //   selected = true
-  // }
 
   if (selectedCellIndex === cellIndex) {
     return (
@@ -27,7 +22,11 @@ function Cell({ cellIndex }) {
       </td>
     )
   } else {
-    return <td role="gridcell" onClick={clickHandler} key={cellIndex}></td>
+    return (
+      <td role="gridcell" onClick={clickHandler} key={cellIndex}>
+        {cell.value}
+      </td>
+    )
   }
 }
 

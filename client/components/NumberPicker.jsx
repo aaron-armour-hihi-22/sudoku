@@ -1,14 +1,17 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
+import { setCellValue } from '../actions/cells'
 import { clearSelectedCell } from '../actions/selectedCellInddex'
 
 function NumberPicker() {
   const dispatch = useDispatch()
+  const selectedCellIndex = useSelector(
+    (reduxStore) => reduxStore.selectedCellIndex
+  )
 
   function valueSetter(event) {
-    console.log(event.target.value)
-    // Set the cell value to the selected value
+    dispatch(setCellValue(selectedCellIndex, event.target.value))
     dispatch(clearSelectedCell())
   }
 
