@@ -7,4 +7,23 @@ body {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+table {
+  border: 3px solid black;
+  border-collapse: collapse;
+}
 
+td {
+  border: 1px solid black;
+  text-align: center;
+  height: 6vmin;
+  width: 6vmin;
+  font-size: 4vmin;
+}
+
+td:nth-child(3n) {
+  border-right: 3px solid black;
+}
+
+tr:nth-child(3n) {
+  border-bottom: 3px solid black;
+}
