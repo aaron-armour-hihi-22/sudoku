@@ -9,7 +9,6 @@ function App() {
       </header>
       <section className="main">
         <SudokuGrid />
-        {/* <p>Hello!</p> */}
       </section>
     </>
   )
