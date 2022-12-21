@@ -26,7 +26,11 @@ function Cell({ cellIndex }) {
 
   return (
     <td role="gridcell" {...fieldProps}>
-      {selectedCellIndex === cellIndex ? <NumberPicker /> : cell.value}
+      {selectedCellIndex === cellIndex ? (
+        <NumberPicker prevValue={cell.value} />
+      ) : (
+        cell.value
+      )}
     </td>
   )
 }
