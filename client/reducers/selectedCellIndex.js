@@ -1,7 +1,7 @@
 import {
   SET_SELECTED_CELL,
   CLEAR_SELECTED_CELL,
-} from '../actions/selectedCellInddex'
+} from '../actions/selectedCellIndex'
 
 const initialState = null
 

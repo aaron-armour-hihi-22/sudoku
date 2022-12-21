@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import NumberPicker from './NumberPicker'
-import { setSelectedCell } from '../actions/selectedCellInddex'
+import { setSelectedCell } from '../actions/selectedCellIndex'
 
 function Cell({ cellIndex }) {
   const dispatch = useDispatch()
