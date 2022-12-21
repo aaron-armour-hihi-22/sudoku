@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { setCellValue } from '../actions/cells'
-import { clearSelectedCell } from '../actions/selectedCellInddex'
+import { clearSelectedCell } from '../actions/selectedCellIndex'
 
 function NumberPicker() {
   const dispatch = useDispatch()
@@ -10,15 +10,37 @@ function NumberPicker() {
     (reduxStore) => reduxStore.selectedCellIndex
   )
 
-  function valueSetter(event) {
-    dispatch(setCellValue(selectedCellIndex, event.target.value))
+  function valueSetter(value) {
+    dispatch(setCellValue(selectedCellIndex, value))
     dispatch(clearSelectedCell())
   }
+
+  function optionHandler(event) {
+    valueSetter(event.target.value)
+  }
+
+  function keyHandler(event) {
+    const theKey = event.key
+
+    if (theKey === 'Escape') {
+      dispatch(clearSelectedCell())
+    } else if ('1' <= theKey && theKey <= '9') {
+      valueSetter(Number(theKey))
+    } else if (theKey === 'Backspace' || theKey === 'Delete') {
+      valueSetter('')
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('keydown', keyHandler)
+
+    return () => window.removeEventListener('keydown', keyHandler)
+  }, [])
 
   // Note: add a bogus first option so that onClick fires on any of 1-9
   return (
     <>
-      <select onChange={valueSetter}>
+      <select onChange={optionHandler}>
         <option style={{ display: 'none' }} value="?"></option>
         <option value={1}>1</option>
         <option value={2}>2</option>
