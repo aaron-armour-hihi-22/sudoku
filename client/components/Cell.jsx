@@ -15,19 +15,20 @@ function Cell({ cellIndex }) {
     dispatch(setSelectedCell(cellIndex))
   }
 
-  if (selectedCellIndex === cellIndex) {
-    return (
-      <td role="gridcell">
-        <NumberPicker />
-      </td>
-    )
-  } else {
-    return (
-      <td role="gridcell" onClick={clickHandler} key={cellIndex}>
-        {cell.value}
-      </td>
-    )
+  const fieldProps = { key: cellIndex }
+  if (cell.hasConflict) {
+    fieldProps['className'] = 'conflict'
   }
+
+  if (cell.isClickable && selectedCellIndex !== cellIndex) {
+    fieldProps['onClick'] = clickHandler
+  }
+
+  return (
+    <td role="gridcell" {...fieldProps}>
+      {selectedCellIndex === cellIndex ? <NumberPicker /> : cell.value}
+    </td>
+  )
 }
 
 export default Cell
