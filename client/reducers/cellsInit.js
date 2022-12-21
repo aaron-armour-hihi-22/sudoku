@@ -6,7 +6,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 0,
@@ -15,7 +15,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 0,
@@ -24,7 +24,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 0,
@@ -33,7 +33,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 0,
@@ -42,7 +42,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 0,
@@ -51,7 +51,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 0,
@@ -60,7 +60,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 0,
@@ -69,7 +69,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 0,
@@ -78,7 +78,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 1,
@@ -87,7 +87,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 1,
@@ -96,7 +96,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 1,
@@ -105,7 +105,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 1,
@@ -114,7 +114,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 1,
@@ -123,7 +123,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 1,
@@ -132,7 +132,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 1,
@@ -141,7 +141,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 1,
@@ -150,7 +150,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 1,
@@ -159,7 +159,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 2,
@@ -168,7 +168,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 2,
@@ -177,7 +177,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 2,
@@ -186,7 +186,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 2,
@@ -195,7 +195,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 2,
@@ -204,7 +204,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 2,
@@ -213,7 +213,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 2,
@@ -222,7 +222,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 2,
@@ -231,7 +231,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 2,
@@ -240,7 +240,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 3,
@@ -249,7 +249,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 3,
@@ -258,7 +258,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 3,
@@ -267,7 +267,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 3,
@@ -276,7 +276,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 3,
@@ -285,7 +285,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 3,
@@ -294,7 +294,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 3,
@@ -303,7 +303,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 3,
@@ -312,7 +312,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 3,
@@ -321,7 +321,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 4,
@@ -330,7 +330,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 4,
@@ -339,7 +339,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 4,
@@ -348,7 +348,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 4,
@@ -357,7 +357,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 4,
@@ -366,7 +366,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 4,
@@ -375,7 +375,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 4,
@@ -384,7 +384,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 4,
@@ -393,7 +393,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 4,
@@ -402,7 +402,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 5,
@@ -411,7 +411,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 5,
@@ -420,7 +420,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 5,
@@ -429,7 +429,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 5,
@@ -438,7 +438,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 5,
@@ -447,7 +447,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 5,
@@ -456,7 +456,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 5,
@@ -465,7 +465,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 5,
@@ -474,7 +474,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 5,
@@ -483,7 +483,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 6,
@@ -492,7 +492,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 6,
@@ -501,7 +501,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 6,
@@ -510,7 +510,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 6,
@@ -519,7 +519,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 6,
@@ -528,7 +528,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 6,
@@ -537,7 +537,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 6,
@@ -546,7 +546,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 6,
@@ -555,7 +555,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 6,
@@ -564,7 +564,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 7,
@@ -573,7 +573,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 7,
@@ -582,7 +582,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 7,
@@ -591,7 +591,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 7,
@@ -600,7 +600,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 7,
@@ -609,7 +609,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 7,
@@ -618,7 +618,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 7,
@@ -627,7 +627,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 7,
@@ -636,7 +636,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 7,
@@ -645,7 +645,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 8,
@@ -654,7 +654,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 8,
@@ -663,7 +663,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 8,
@@ -672,7 +672,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 8,
@@ -681,7 +681,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 8,
@@ -690,7 +690,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 8,
@@ -699,7 +699,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 8,
@@ -708,7 +708,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 8,
@@ -717,7 +717,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
   {
     row: 8,
@@ -726,7 +726,7 @@ const initialState = [
     value: '',
     isClickable: true,
     isAStartingCell: false,
-    hasConflict: false,
+    numConflicts: 0,
   },
 ]
 

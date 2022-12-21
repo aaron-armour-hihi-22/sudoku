@@ -16,7 +16,7 @@ function Cell({ cellIndex }) {
   }
 
   const fieldProps = { key: cellIndex }
-  if (cell.hasConflict) {
+  if (cell.numConflicts > 0) {
     fieldProps['className'] = 'conflict'
   }
 
