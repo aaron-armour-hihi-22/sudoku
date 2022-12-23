@@ -16,6 +16,10 @@ function Cell({ cellIndex }) {
   }
 
   const fieldProps = { key: cellIndex }
+  if (cell.isAStartingCell) {
+    fieldProps['className'] = 'starting-cell'
+  }
+
   if (cell.numConflicts > 0) {
     fieldProps['className'] = 'conflict'
   }
