@@ -87,7 +87,7 @@ function NumberPicker({ prevValue }) {
     return () => window.removeEventListener('keydown', keyHandler)
   }, [])
 
-  // Note: add a bogus first option so that onClick fires on any of 1-9
+  // Note: add a bogus first option so that onChange fires on any of 1-9
   return (
     <>
       <select onChange={optionHandler}>
