@@ -53,9 +53,7 @@ function NumberPicker({ prevValue }) {
     if (cells.every((cell) => cell.numConflicts === 0)) {
       dispatch(freezeCells())
 
-      setTimeout(() => {
-        alert('Successfully completed!')
-      }, 50)
+      alert('Successfully completed!')
     }
   }
 
