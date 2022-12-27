@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { setCellValue } from '../actions/cells'
+import { freezeCells, setCellValue } from '../actions/cells'
 import { clearSelectedCell } from '../actions/selectedCellIndex'
+import { decrNumEmptyCells, incrNumEmptyCells } from '../actions/numEmptyCells'
 
 function getNeighbours(cells, selectedCellIndex) {
   const selectedCell = cells[selectedCellIndex]
@@ -24,8 +25,6 @@ function findConflicts(neighbours, value) {
 
 function updateNumConflicts(cells, selectedCellIndex, prevValue, newValue) {
   const neighbours = getNeighbours(cells, selectedCellIndex)
-  // console.log(cells[selectedCellIndex])
-  // console.log(neighbours)
 
   const prevConflicts = findConflicts(neighbours, prevValue)
   const newConflicts = findConflicts(neighbours, newValue)
@@ -39,9 +38,6 @@ function updateNumConflicts(cells, selectedCellIndex, prevValue, newValue) {
   }
 
   cells[selectedCellIndex].numConflicts = newConflicts.length
-
-  // console.log(cells[selectedCellIndex])
-  // console.log(neighbours)
 }
 
 function NumberPicker({ prevValue }) {
@@ -50,16 +46,28 @@ function NumberPicker({ prevValue }) {
   const selectedCellIndex = useSelector(
     (reduxStore) => reduxStore.selectedCellIndex
   )
+  const numEmptyCells = useSelector((reduxStore) => reduxStore.numEmptyCells)
 
-  // console.log(getNeighbours(cells, selectedCellIndex))
-  // const randomIndex = Math.floor(Math.random() * 81)
-  // cells[randomIndex].numConflicts++
+  if (numEmptyCells === 0) {
+    // All cells have a value, successfully filled if there are no conflicts
+    if (cells.every((cell) => cell.numConflicts === 0)) {
+      dispatch(freezeCells())
+
+      alert('Successfully completed!')
+    }
+  }
 
   function valueSetter(value) {
     dispatch(setCellValue(selectedCellIndex, value))
 
     if (value !== prevValue) {
       updateNumConflicts(cells, selectedCellIndex, prevValue, value)
+    }
+
+    if (value !== '' && prevValue === '') {
+      dispatch(decrNumEmptyCells())
+    } else if (value === '' && prevValue !== '') {
+      dispatch(incrNumEmptyCells())
     }
 
     dispatch(clearSelectedCell())

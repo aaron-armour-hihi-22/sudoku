@@ -1,4 +1,4 @@
-import { INITIALISE_GRID, SET_CELL_VALUE } from '../actions/cells'
+import { FREEZE_CELLS, INITIALISE_GRID, SET_CELL_VALUE } from '../actions/cells'
 import { initialState } from './cellsInit'
 
 function reducer(state = initialState, action) {
@@ -18,6 +18,13 @@ function reducer(state = initialState, action) {
           state[index].isAStartingCell = true
           state[index].isClickable = false
         }
+      })
+
+      return state
+    }
+    case FREEZE_CELLS: {
+      state.forEach((cell) => {
+        cell.isClickable = false
       })
 
       return state
