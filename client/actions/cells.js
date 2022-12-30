@@ -1,4 +1,5 @@
 import { fetchNewGrid } from '../apis'
+import { setNewGrid } from './newGrid'
 
 export const RESET_GRID = 'RESET_GRID'
 export const INITIALISE_GRID = 'INITIALISE_GRID'
@@ -37,6 +38,7 @@ export function initialiseNewGridThunk(difficulty) {
       const newGrid = await fetchNewGrid(difficulty)
       dispatch(resetGrid())
       dispatch(initialiseGrid(newGrid))
+      dispatch(setNewGrid())
     } catch (err) {
       console.log(err.message)
     }

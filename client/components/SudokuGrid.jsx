@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { unsetNewGrid } from '../actions/newGrid'
 
 import Cell from './Cell'
 
@@ -29,6 +31,15 @@ function createCells() {
 }
 
 function SudokuGrid() {
+  const dispatch = useDispatch()
+  const newGrid = useSelector((reduxStore) => reduxStore.newGrid)
+  const [updateNum, setUpdateNum] = useState(0)
+
+  useEffect(() => {
+    setUpdateNum((num) => num++)
+    dispatch(unsetNewGrid())
+  }, [newGrid])
+
   return (
     <>
       <table role="grid">
