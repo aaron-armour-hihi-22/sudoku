@@ -37,7 +37,7 @@ function reducer(
     case SET_CELL_VALUE: {
       const { cellIndex, value } = payload
       state[cellIndex].value = value
-      return state
+      return [...state]
     }
 
     case FREEZE_CELLS: {
@@ -45,7 +45,7 @@ function reducer(
         cell.isClickable = false
       })
 
-      return state
+      return [...state]
     }
 
     default:
