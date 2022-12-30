@@ -1,8 +1,6 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 
 import Cell from './Cell'
-import { initialiseGrid } from '../actions/cells'
 
 const cellIndices = [
   [0, 1, 2, 3, 4, 5, 6, 7, 8],
@@ -31,15 +29,6 @@ function createCells() {
 }
 
 function SudokuGrid() {
-  // As an interim step, eventually want to be able to select difficulty
-  // and generate random sudoku puzzles (hopefully)
-  const dispatch = useDispatch()
-  dispatch(
-    initialiseGrid(
-      '103450789450000023789020450234060001507090200800230500045078010608000345912005008'
-    )
-  )
-
   return (
     <>
       <table role="grid">
