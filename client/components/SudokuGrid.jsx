@@ -1,8 +1,8 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { unsetNewGrid } from '../actions/newGrid'
 
 import Cell from './Cell'
-import { initialiseGrid } from '../actions/cells'
 
 const cellIndices = [
   [0, 1, 2, 3, 4, 5, 6, 7, 8],
@@ -31,14 +31,14 @@ function createCells() {
 }
 
 function SudokuGrid() {
-  // As an interim step, eventually want to be able to select difficulty
-  // and generate random sudoku puzzles (hopefully)
   const dispatch = useDispatch()
-  dispatch(
-    initialiseGrid(
-      '103450789450000023789020450234060001507090200800230500045078010608000345912005008'
-    )
-  )
+  const newGrid = useSelector((reduxStore) => reduxStore.newGrid)
+  const [updateNum, setUpdateNum] = useState(0)
+
+  useEffect(() => {
+    setUpdateNum((num) => num++)
+    dispatch(unsetNewGrid())
+  }, [newGrid])
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { INITIALISE_GRID } from '../actions/cells'
+import { INITIALISE_GRID, RESET_GRID } from '../actions/cells'
 import {
   DECR_NUM_EMPTY_CELLS,
   INCR_NUM_EMPTY_CELLS,
@@ -8,6 +8,9 @@ function reducer(state = 81, action) {
   const { type, payload } = action
 
   switch (type) {
+    case RESET_GRID:
+      return 81
+
     case INITIALISE_GRID: {
       const startingValues = payload.split('')
       let numZeroes = 0
@@ -19,10 +22,13 @@ function reducer(state = 81, action) {
 
       return numZeroes
     }
+
     case INCR_NUM_EMPTY_CELLS:
       return ++state
+
     case DECR_NUM_EMPTY_CELLS:
       return --state
+
     default:
       return state
   }
