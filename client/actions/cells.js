@@ -1,11 +1,13 @@
-export const SET_CELL_VALUE = 'SET_CELL_VALUE'
+import { fetchNewGrid } from '../apis'
+
+export const RESET_GRID = 'RESET_GRID'
 export const INITIALISE_GRID = 'INITIALISE_GRID'
+export const SET_CELL_VALUE = 'SET_CELL_VALUE'
 export const FREEZE_CELLS = 'FREEZE_CELLS'
 
-export function setCellValue(cellIndex, value) {
+export function resetGrid() {
   return {
-    type: SET_CELL_VALUE,
-    payload: { cellIndex, value },
+    type: RESET_GRID,
   }
 }
 
@@ -16,8 +18,27 @@ export function initialiseGrid(startingGridString) {
   }
 }
 
+export function setCellValue(cellIndex, value) {
+  return {
+    type: SET_CELL_VALUE,
+    payload: { cellIndex, value },
+  }
+}
+
 export function freezeCells() {
   return {
     type: FREEZE_CELLS,
+  }
+}
+
+export function initialiseNewGridThunk(difficulty) {
+  return async function (dispatch) {
+    try {
+      const newGrid = await fetchNewGrid(difficulty)
+      dispatch(resetGrid())
+      dispatch(initialiseGrid(newGrid))
+    } catch (err) {
+      console.log(err.message)
+    }
   }
 }
