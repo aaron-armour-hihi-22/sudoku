@@ -8,21 +8,23 @@ import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Menu from '@mui/material/Menu'
+
 import { setModalOpen } from '../actions/modalOpen'
 
 function MenuAppBar() {
   const dispatch = useDispatch()
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
-  const handleClick = (event) => {
+
+  function handleClick(event) {
     setAnchorEl(event.currentTarget)
   }
 
-  const handleClose = () => {
+  function handleClose() {
     setAnchorEl(null)
   }
 
-  const handleNewSudoku = () => {
+  function handleNewSudoku() {
     setAnchorEl(null)
     dispatch(setModalOpen())
   }
