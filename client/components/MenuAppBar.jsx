@@ -1,4 +1,5 @@
-import * as React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -7,9 +8,11 @@ import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Menu from '@mui/material/Menu'
+import { setModalOpen } from '../actions/modalOpen'
 
 function MenuAppBar() {
-  const [anchorEl, setAnchorEl] = React.useState(null)
+  const dispatch = useDispatch()
+  const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget)
@@ -17,6 +20,11 @@ function MenuAppBar() {
 
   const handleClose = () => {
     setAnchorEl(null)
+  }
+
+  const handleNewSudoku = () => {
+    setAnchorEl(null)
+    dispatch(setModalOpen())
   }
 
   return (
@@ -39,7 +47,7 @@ function MenuAppBar() {
             anchorEl={anchorEl}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose}>New Sudoku</MenuItem>
+            <MenuItem onClick={handleNewSudoku}>New Sudoku</MenuItem>
           </Menu>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
             Sudoku
