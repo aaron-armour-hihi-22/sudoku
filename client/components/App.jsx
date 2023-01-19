@@ -3,7 +3,6 @@ import React from 'react'
 import MenuAppBar from './MenuAppBar'
 import NewSudokuModal from './NewSudokuModal'
 import SudokuGrid from './SudokuGrid'
-import SudokuOptions from './SudokuOptions'
 
 function App() {
   return (
@@ -12,7 +11,6 @@ function App() {
       <NewSudokuModal />
       <section className="main">
         <SudokuGrid />
-        <SudokuOptions />
       </section>
     </>
   )
