@@ -5,6 +5,7 @@ import cells from './cells'
 import modalOpen from './modalOpen'
 import numEmptyCells from './numEmptyCells'
 import newGrid from './newGrid'
+import snackMsg from './snackMsg'
 
 export default combineReducers({
   selectedCellIndex,
@@ -12,4 +13,5 @@ export default combineReducers({
   modalOpen,
   numEmptyCells,
   newGrid,
+  snackMsg,
 })
