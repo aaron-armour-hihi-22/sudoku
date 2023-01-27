@@ -1,16 +1,18 @@
 import React from 'react'
+
+import MenuAppBar from './MenuAppBar'
+import NewSudokuModal from './NewSudokuModal'
+import SnackMessage from './SnackMessage'
 import SudokuGrid from './SudokuGrid'
-import SudokuOptions from './SudokuOptions'
 
 function App() {
   return (
     <>
-      <header className="header">
-        <h1>Sudoku</h1>
-      </header>
+      <MenuAppBar />
+      <SnackMessage />
+      <NewSudokuModal />
       <section className="main">
         <SudokuGrid />
-        <SudokuOptions />
       </section>
     </>
   )

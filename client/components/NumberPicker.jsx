@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { freezeCells, setCellValue } from '../actions/cells'
 import { clearSelectedCell } from '../actions/selectedCellIndex'
 import { decrNumEmptyCells, incrNumEmptyCells } from '../actions/numEmptyCells'
+import { launchSnackMsg } from '../actions/snackMsg'
 
 function getNeighbours(cells, selectedCellIndex) {
   const selectedCell = cells[selectedCellIndex]
@@ -47,15 +48,23 @@ function NumberPicker({ prevValue }) {
     (reduxStore) => reduxStore.selectedCellIndex
   )
   const numEmptyCells = useSelector((reduxStore) => reduxStore.numEmptyCells)
+  const [won, setWon] = useState(false)
 
-  if (numEmptyCells === 0) {
+  if (numEmptyCells === 0 && !won) {
     // All cells have a value, successfully filled if there are no conflicts
     if (cells.every((cell) => cell.numConflicts === 0)) {
       dispatch(freezeCells())
-
-      alert('Successfully completed!')
+      setWon(true)
     }
   }
+
+  // Need to queue this dispatch within useEffect to avoid the warning
+  // "Cannot update a component while rendering another component..."
+  useEffect(() => {
+    if (numEmptyCells === 0 && won) {
+      dispatch(launchSnackMsg('✔ Sudoku successfully completed! ✔'))
+    }
+  }, [won])
 
   function valueSetter(value) {
     dispatch(setCellValue(selectedCellIndex, value))

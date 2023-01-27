@@ -1,5 +1,3 @@
-import { func } from 'prop-types'
-
 export const SET_NEW_GRID = 'SET_NEW_GRID'
 export const UNSET_NEW_GRID = 'UNSET_NEW_GRID'
 
