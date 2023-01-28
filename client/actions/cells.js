@@ -1,4 +1,4 @@
-import { fetchNewGrid } from '../apis'
+import { getPuzzle } from '../lib/newSudoku'
 import { setNewGrid } from './newGrid'
 
 export const RESET_GRID = 'RESET_GRID'
@@ -35,7 +35,7 @@ export function freezeCells() {
 export function initialiseNewGridThunk(difficulty) {
   return async function (dispatch) {
     try {
-      const newGrid = await fetchNewGrid(difficulty)
+      const newGrid = await getPuzzle(difficulty)
       dispatch(resetGrid())
       dispatch(initialiseGrid(newGrid))
       dispatch(setNewGrid())
