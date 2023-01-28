@@ -33,9 +33,9 @@ export function freezeCells() {
 }
 
 export function initialiseNewGridThunk(difficulty) {
-  return async function (dispatch) {
+  return function (dispatch) {
     try {
-      const newGrid = await getPuzzle(difficulty)
+      const newGrid = getPuzzle(difficulty)
       dispatch(resetGrid())
       dispatch(initialiseGrid(newGrid))
       dispatch(setNewGrid())
