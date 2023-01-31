@@ -33,7 +33,7 @@ function createCells() {
 function SudokuGrid() {
   const dispatch = useDispatch()
   const newGrid = useSelector((reduxStore) => reduxStore.newGrid)
-  const [updateNum, setUpdateNum] = useState(0)
+  const [_, setUpdateNum] = useState(0)
 
   useEffect(() => {
     setUpdateNum((num) => num++)
@@ -41,11 +41,11 @@ function SudokuGrid() {
   }, [newGrid])
 
   return (
-    <>
+    <div>
       <table role="grid">
         <tbody>{createCells()}</tbody>
       </table>
-    </>
+    </div>
   )
 }
 
