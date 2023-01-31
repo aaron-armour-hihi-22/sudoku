@@ -12,7 +12,7 @@ Some of the key modules used in this project are:
 1. React and Redux - for the front-end
 1. Material UI - for components used on the front-end
 1. Express (Node.js) - for the server
-1. sudoku-gen - for the sudoku puzzle generation
+1. [sudoku-gen](https://www.npmjs.com/package/sudoku-gen) - for the sudoku puzzle generation
 
 ## App structure
 
@@ -22,17 +22,15 @@ The SudokuGrid is a 9 x 9 table consisting of Cell components. Each Cell has som
 
 The Sudoku is successfully completed when: all Cells have a value assigned, and there are no conflicts (i.e. no Cells in the same row, column, or 3 x 3 subsquare have the same value). When this happens a short success message ("✔ Sudoku successfully completed! ✔") is displayed to the user in the SnackMessage component.
 
-## Sudoku puzzle API
+## Sudoku puzzle generation
 
-In order to handle generation of sudoku puzzles, the client makes a get request to the endpoint url/api/v1/sudoku with a difficulty parameter, which must be one of: easy, medium, hard, or expert. The server responds with a JSON object containing a puzzle with 0's used to represent blank Cells.
+I use the module [sudoku-gen](https://www.npmjs.com/package/sudoku-gen) for puzzle generation. I have a function `getPuzzle` which takes a difficulty parameter. sudoku-gen is used to generate the puzzle of the required difficulty and the function then returns the resulting puzzle, represented as a string of 81 digits (with 0's used to represent blank Cells).
 
-As an example, the following request:
+As an example, the function call:
 ```
-localhost:3000/api/v1/sudoku?difficulty=easy
+getPuzzle("easy")
 ```
-might be sent the following response:
+might return the following string:
 ```
-{
-  "puzzle": "009030000800000305000502680480927501910000020730085496500000060204051000008309004"
-}
+"009030000800000305000502680480927501910000020730085496500000060204051000008309004"
 ```
