@@ -2,6 +2,8 @@
 
 This is a single page web application which allows users to play sudoku. Who doesn't enjoy solving a sudoku every so often...
 
+The live version of the application is [here](https://aarons-sudoku.netlify.app/).
+
 It is somewhat of a work in progress. I plan to add extra functionality and features as time allows.
 
 ## Tech stack
