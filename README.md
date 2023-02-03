@@ -12,7 +12,7 @@ When users first visit the site, they are greeted with the following welcome mes
 ![welcome message with instructions](images/sudoku_welcome.jpg)
 
 After selecting 'New Game' from the menu and selecting a level of difficulty, the screen will change and display their puzzle in a grid. An example of this is below:
-![example sudoku puzzle](images/sudok_new_game.jpg)
+![example sudoku puzzle](images/sudoku_new_game.jpg)
 
 Users can then click on cells (other than the initial cells with values assigned at the start of the game) and set values for those cells to complete the sudoku. If there are any cells with conflicts (i.e. cells in the same row, column or subsquare having the same value), these get highlighted with a red background as below:
 ![sudoku puzzle with conflicting cells highlighted](images/sudoku_conflicting_cells.jpg)
