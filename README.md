@@ -24,7 +24,6 @@ This app is written in JS.
 Some of the key modules used in this project are:
 1. React and Redux - for the front-end
 1. Material UI - for components used on the front-end
-1. Express (Node.js) - for the server
 1. [sudoku-gen](https://www.npmjs.com/package/sudoku-gen) - for the sudoku puzzle generation
 
 ## App structure
